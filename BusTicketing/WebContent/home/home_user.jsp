@@ -24,7 +24,7 @@
 			<a href="/${Configs.APP}/logout">Logout</a>
 		</c:when>
 		<c:otherwise>
-			<c:redirect url="/${Configs.APP}/:ogin/login.jsp" />
+			<c:redirect url="/${Configs.APP}/Login/login.jsp" />
 		</c:otherwise>
 	</c:choose>
 </body>

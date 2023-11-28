@@ -2,6 +2,9 @@ package com.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.model.User;
+import com.model.Booking;
+import com.model.Schedule;
 
 public class MockData {
     // Generate mock user data

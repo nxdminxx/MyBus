@@ -36,7 +36,7 @@ public class logoutServlet extends controller {
 			throws ServletException, IOException {
 		auth.logout();
 		session.delete("user");
-		response.sendRedirect("login/login.jsp");
+		response.sendRedirect("Login/login.jsp");
 	}
 
 }

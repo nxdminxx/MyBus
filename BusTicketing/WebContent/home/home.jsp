@@ -21,35 +21,14 @@
 
 				<c:otherwise>
 
-					<c:redirect url="/${Configs.APP}/login/login.jsp" />
+					<c:redirect url="/${Configs.APP}/Login/login.jsp" />
 				</c:otherwise>
 			</c:choose>
 		</c:when>
 		<c:otherwise>
-			<c:redirect url="/${Configs.APP}/login/login.jsp" />
+			<c:redirect url="/${Configs.APP}/Login/login.jsp" />
 		</c:otherwise>
 	</c:choose>
-	<!-- 		
-	/* String username = request.getParameter("username");
-	String password = request.getParameter ("password");
-	
-	User user = (User)request.getAttribute("user");
-	user.setUsername(username);
-	user.setPassword(password);
-	request.setAttribute("user", user);
-	
-	
-	if (username == null || username.equals(""))
-	{
-		throw new Exception();
-	}
-	else
-	{
-		/* out.print("Welcome " + userName); */
-/* 		RequestDispatcher rd= request.getRequestDispatcher("success.jsp");
-		rd.forward(request,response);
-	} */ 
-	 -->
 	
 	
 </body>
