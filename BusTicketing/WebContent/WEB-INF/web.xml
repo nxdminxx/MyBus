@@ -3,8 +3,10 @@
   <display-name>BusTicketing</display-name>
   <welcome-file-list>
     <welcome-file>Login/login.jsp</welcome-file>
-	<welcome-file>Login/errorPage.jsp</welcome-file>
 	<welcome-file>Login/success.jsp</welcome-file>
+	<welcome-file>home.jsp</welcome-file>
+	<welcome-file>home_user.jsp</welcome-file>
+	
     
   </welcome-file-list>
 </web-app>
