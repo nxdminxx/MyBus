@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <title>Bus Ticketing System</title>
 </head>
 <body>
-
+    <footer>
+        <!-- Add footer content, such as copyright information or links -->
+        <p>&copy; 2023 Bus Ticketing System. All rights reserved.</p>
+    </footer>
 </body>
 </html>
