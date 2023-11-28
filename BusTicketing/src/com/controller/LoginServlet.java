@@ -2,38 +2,59 @@ package com.controller;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import com.model.MockData;
-
+import com.model.app.ServiceLocator;
+import com.controller.controller;
+import com.authentication.AuthenticationService;
+import com.services.session.SessionService;
+import com.model.User;
+import com.model.app.*;
 
 @WebServlet("/login")
-public class LoginServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Retrieve user credentials from the request
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
+public class LoginServlet extends controller {
 
-        // Validate credentials using mock data
-        boolean isValidUser = MockData.isValidUser(username, password);
+	private static final long serialVersionUID = 1L;
+	private AuthenticationService auth;
+	private SessionService session;
 
-        if (isValidUser) {
-            // Set user information in the session
-            User user = new User(username, password);
-            request.getSession().setAttribute("user", user);
+	@Override
+	public void init() throws ServletException {
+		super.init();
+		auth = (AuthenticationService) ServiceLocator.getService("AUTHENTICATION_SERVICE");
+		session = (SessionService) ServiceLocator.getService("SESSION_SERVICE");
+	}
 
-            // Redirect to the home page or another appropriate page
-            response.sendRedirect(request.getContextPath() + "/");
-        } else {
-            // Redirect back to the login page with an error message
-            request.setAttribute("errorMessage", "Invalid credentials");
-            request.getRequestDispatcher("/login.jsp").forward(request, response);
-        }
-    }
+	public LoginServlet() {
+		super();
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		// steps:
+		// 1. Read inputs sent by the client
+		// 2. perform credential checking
+		// 3. If the user's credential match, establish a session for it
+		// 4. Forward execution to view
+
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		String page = "";
+
+		User user = auth.login(username, password);
+		if (user != null) {
+			user.setAuthenticated(true);
+			session.set("user", user);
+			page = "home/home.jsp";
+		} else {
+			page = "Login/login_error.jsp";
+		}
+
+		response.sendRedirect("/"+ Configs.APP + "/"+page);
+	}
+
 }
