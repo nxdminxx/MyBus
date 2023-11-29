@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ page import="com.model.MockData" %>
-<%@ page import="com.model.Schedule" %>
 <!DOCTYPE html>
 <html>
 <head>
