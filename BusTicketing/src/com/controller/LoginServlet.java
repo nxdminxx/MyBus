@@ -7,12 +7,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.model.app.Configs;
 import com.model.app.ServiceLocator;
 import com.controller.controller;
 import com.authentication.AuthenticationService;
 import com.services.session.SessionService;
 import com.model.User;
-import com.model.app.*;
 
 @WebServlet("/login")
 public class LoginServlet extends controller {

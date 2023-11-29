@@ -5,8 +5,13 @@
   
     <welcome-file>Login/login.jsp</welcome-file>
 	<welcome-file>Login/success.jsp</welcome-file>
-	<welcome-file>home.jsp</welcome-file>
-	<welcome-file>home_user.jsp</welcome-file>
+	<welcome-file>home/home.jsp</welcome-file>
+	<welcome-file>home/home_user.jsp</welcome-file>
+	<welcome-file>Booking.jsp</welcome-file>
+	<welcome-file>MyBooking.jsp</welcome-file>
+	<welcome-file>AddBusServlet.jsp</welcome-file>
+	<welcome-file>BusServlet.jsp</welcome-file>
+	
     
   </welcome-file-list>
 </web-app>
